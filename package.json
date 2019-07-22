@@ -1,6 +1,6 @@
 {
   "name": "@codevadmin/jquery-tmpl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The library was deprecated but some projects are still using it. This is jquery-tmpl commonjs implementation.",
   "main": "dist/index.js",
   "directories": {
