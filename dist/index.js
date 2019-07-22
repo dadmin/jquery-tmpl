@@ -11,11 +11,13 @@
 	if (typeof define === 'function' && define.amd) {
 		// Loading from AMD script loader. Register as an anonymous module.
 		define( ['jquery'], factory );
+	} else if (typeof exports === 'object' && typeof module !== 'undefined') {
+		factory(require('jquery'), exports);
 	} else {
 		// Browser using plain <script> tag
 		factory( jQuery );
 	}
-}(function( jQuery ){
+}(function( jQuery, exports ){
 	var oldManip = jQuery.fn.domManip, tmplItmAtt = "_tmplitem", htmlExpr = /^[^<]*(<[\w\W]+>)[^>]*$|\{\{\! /,
 		newTmplItems = {}, wrappedItems = {}, appendToTmplItems, topTmplItem = { key: 0, data: {} }, itemKey = 0, cloneIndex = 0, stack = [];
 
@@ -488,5 +490,13 @@
 		var coll = this.nodes;
 		jQuery.tmpl( null, null, null, this).insertBefore( coll[0] );
 		jQuery( coll ).remove();
+	}
+
+	if (typeof exports === 'object') {
+		Object.defineProperty(exports, "__esModule", {
+			value: true
+		});
+
+		exports.default = jQuery; 
 	}
 }));
