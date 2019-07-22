@@ -1,0 +1,32 @@
+{
+  "name": "@codevadmin/jquery-tmpl",
+  "version": "1.0.4",
+  "description": "The library was deprecated but it is still using inside some projects. This is jquery-tmpl commonjs implementation.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dadmin/jquery-tmpl.git"
+  },
+  "keywords": [
+    "jquery",
+    "jquery-tmpl",
+    "template",
+    "engine",
+    "commonjs"
+  ],
+  "author": "codevadmin",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/dadmin/jquery-tmpl/issues"
+  },
+  "homepage": "https://github.com/dadmin/jquery-tmpl#readme"
+}
