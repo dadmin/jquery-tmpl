@@ -187,6 +187,7 @@ Each template item (the result of rendering a data item with the template) is as
 	</body>
 	</html>
 ```
+
 ### Example: Render data from a remote service, using jQuery.tmpl().
 ```html
 	<!DOCTYPE html>
