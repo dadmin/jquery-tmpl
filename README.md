@@ -247,7 +247,7 @@ Each template item (the result of rendering a data item with the template) is as
 
 ### Example: Use jQuery-tmpl as a commonjs module.
 
-```
+```js
 	import $ from '@codevadmin/jquery-tmpl';
 
 	const markup = "<li><b>${Name}</b> (${ReleaseYear})</li>";
