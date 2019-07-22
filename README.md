@@ -244,3 +244,44 @@ Each template item (the result of rendering a data item with the template) is as
 	</body>
 	</html>
 ```
+
+### Example: Use jQuery-tmpl as a commonjs module.
+
+```
+	import $ from '@codevadmin/jquery-tmpl';
+
+	const markup = "<li><b>${Name}</b> (${ReleaseYear})</li>";
+
+	/* Compile the markup as a named template */
+	$.template( "movieTemplate", markup );
+
+	function getMovies( genre, skip, top ) {
+	  $.ajax({
+		dataType: "jsonp",
+		url: "http://odata.netflix.com/Catalog/Genres('" + genre
+		+ "')/Titles?$format=json&$skip="
+		+ skip + "&$top=" + top,
+		jsonp: "$callback",
+		success: function( data ) {
+		  /* Get the movies array from the data */
+		  var movies = data.d;
+
+		  /* Remove current set of movie template items */
+		  $( "#movieList" ).empty();
+
+		  /* Render the template items for each movie
+		  and insert the template items into the "movieList" */
+		  $.tmpl( "movieTemplate", movies )
+		  .appendTo( "#movieList" );
+		}
+	  });
+	}
+
+	$( "#cartoonsBtn" ).click( function() {
+	  getMovies( "Cartoons", 0, 6 );
+	});
+
+	$( "#dramaBtn" ).click( function() {
+	  getMovies( "Drama", 0, 6 );
+	});
+```
