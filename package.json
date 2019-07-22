@@ -6,9 +6,6 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dadmin/jquery-tmpl.git"
