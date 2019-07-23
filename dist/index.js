@@ -12,12 +12,12 @@
 		// Loading from AMD script loader. Register as an anonymous module.
 		define( ['jquery'], factory );
 	} else if (typeof exports === 'object' && typeof module !== 'undefined') {
-		factory(require('jquery'), exports);
+		module.exports = factory( require('jquery') );
 	} else {
 		// Browser using plain <script> tag
 		factory( jQuery );
 	}
-}(function( jQuery, exports ){
+}(function( jQuery ){
 	var oldManip = jQuery.fn.domManip, tmplItmAtt = "_tmplitem", htmlExpr = /^[^<]*(<[\w\W]+>)[^>]*$|\{\{\! /,
 		newTmplItems = {}, wrappedItems = {}, appendToTmplItems, topTmplItem = { key: 0, data: {} }, itemKey = 0, cloneIndex = 0, stack = [];
 
@@ -492,11 +492,5 @@
 		jQuery( coll ).remove();
 	}
 
-	if (typeof exports === 'object') {
-		Object.defineProperty(exports, "__esModule", {
-			value: true
-		});
-
-		exports.default = jQuery; 
-	}
+	return jQuery;
 }));
